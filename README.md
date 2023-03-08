@@ -18,3 +18,18 @@ https://emmauscollege.github.io/informatica/game/
 - icon <br>
         http://www.iconarchive.com/show/android-lollipop-icons-by-dtafalonso/Play-Games-icon.html
 - ...
+
+## Stappenplan
+[] stap 1: Maak een rechthoekig blokje.
+[] stap 2: Zorg dat blokje rechtdoor en achteruit kan. 
+[] stap 3: Zorg bokje kan links en rechts.
+[] stap 4: Omgeving veranderen.
+[] stap 5: Objecten plaatsen (coins). 
+[] stap 6: Springen.
+[] stap 7: Tijd anders dood.
+[] stap 8: Einde.
+[] stap 9: Level up.
+[] stap 10: Menu.
+[] stap 11: Vijanden en bonus (ster).
+[] stap 12: Geluid, poppetje verbeteren.
+[] stap 13: Xp voor level poppetje. 3 levens, zien hoeveel coins je hebt verzameld. 
