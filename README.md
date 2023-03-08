@@ -25,11 +25,12 @@ https://emmauscollege.github.io/informatica/game/
 [] stap 3: Zorg bokje kan links en rechts.
 [] stap 4: Omgeving veranderen.
 [] stap 5: Objecten plaatsen (coins). 
-[] stap 6: Springen.
-[] stap 7: Tijd anders dood.
-[] stap 8: Einde.
-[] stap 9: Level up.
-[] stap 10: Menu.
-[] stap 11: Vijanden en bonus (ster).
-[] stap 12: Geluid, poppetje verbeteren.
-[] stap 13: Xp voor level poppetje. 3 levens, zien hoeveel coins je hebt verzameld. 
+[] stap 6: Coins oppakken. 
+[] stap 7: Springen.
+[] stap 8: Tijd anders dood.
+[] stap 9: Einde.
+[] stap 10: Level up.
+[] stap 11: Menu.
+[] stap 12: Vijanden en bonus (ster).
+[] stap 13: Geluid, poppetje verbeteren.
+[] stap 14: Xp voor level poppetje. 3 levens, zien hoeveel coins je hebt verzameld. 
