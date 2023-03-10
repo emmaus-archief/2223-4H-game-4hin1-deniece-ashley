@@ -20,7 +20,7 @@ https://emmauscollege.github.io/informatica/game/
 - ...
 
 ## Stappenplan
-[] stap 1: Maak een rechthoekig blokje.
+[X] stap 1: Maak een rechthoekig blokje.
 [] stap 2: Zorg dat blokje rechtdoor en achteruit kan. 
 [] stap 3: Zorg bokje kan links en rechts.
 [] stap 4: Omgeving veranderen.
