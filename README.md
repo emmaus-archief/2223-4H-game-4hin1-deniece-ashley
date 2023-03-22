@@ -21,12 +21,12 @@ https://emmauscollege.github.io/informatica/game/
 
 ## Stappenplan
 [X] stap 1: Maak een rechthoekig blokje.
-[] stap 2: Zorg dat blokje rechtdoor en achteruit kan. 
-[] stap 3: Zorg bokje kan links en rechts.
+[X] stap 2: Zorg dat blokje rechtdoor en achteruit kan. 
+[X] stap 3: Zorg bokje kan links en rechts.
 [] stap 4: Omgeving veranderen.
 [] stap 5: Objecten plaatsen (coins). 
 [] stap 6: Coins oppakken. 
-[] stap 7: Springen.
+[X] stap 7: Springen.
 [] stap 8: Tijd anders dood.
 [] stap 9: Einde.
 [] stap 10: Level up.
