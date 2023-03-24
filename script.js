@@ -20,17 +20,20 @@ const GAMEOVER = 2;
 var spelStatus = SPELEN;
 const KEY_LEFT = 37;
 const KEY_RIGHT = 39;
-const DOWN_ARROW = 40;
-const UP_ARROW = 38;
 const KEY_SPACE = 32;
 
 var spelerX = 200; // x-positie van speler
 var spelerY = 600; // y-positie van speler
+var vijandX = 600; // x-positie van vijand
+var vijandY = 500; // y-positie van vijand
 
 var spelerSpringt = false;
 var springSnelheid = 0;
 var springSnelheidStart = 5;
 var zwaartekracht = 0.4 ;
+
+var img; //plaatje
+
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -47,13 +50,6 @@ var beweegAlles = function() {
   
   if (keyIsDown(KEY_RIGHT)) {
     spelerX = spelerX +1;
-  }
-  if (keyIsDown(DOWN_ARROW)) {
-    spelerY = spelerY + 1;
-  }
-
-  if (keyIsDown(UP_ARROW)) {
-    spelerY = spelerY - 1;
   }
   
   if(spelerSpringt === false && 
@@ -94,7 +90,10 @@ var tekenAlles = function() {
   // achtergrond
   fill("rgb(135, 206, 235)");
   rect(0,0,1280,720);
+  
   // vijand
+ image(img, vijandX - 25 , vijandY - 25, 50, 50);
+
 
   // kogel
 
@@ -105,7 +104,6 @@ var tekenAlles = function() {
   ellipse(spelerX, spelerY + 50, 10, 10);
 
   // punten en health
-
 };
 
 /**
@@ -120,6 +118,15 @@ var checkGameOver = function() {
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
+
+/**
+ * preload
+ * de code in deze functie wordt één keer uitgevoerd door
+ * we laden hier de plaatjes
+ */
+function preload() {
+  img = loadImage('Fireball.png');
+}
 
 /**
  * setup
