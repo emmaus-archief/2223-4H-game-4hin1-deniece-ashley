@@ -92,7 +92,7 @@ var tekenAlles = function() {
   rect(0,0,1280,720);
   
   // vijand
- image(img, vijandX - 25 , vijandY - 25, 50, 50);
+ image(img, vijandX - 25 , vijandY - 25, 125, 125);
 
 
   // kogel

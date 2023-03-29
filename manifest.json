@@ -2,7 +2,7 @@
   "name": "De Beste Game Van De Klas",
   "short_name": "Game",
   "icons": [{
-    "src": "icon-512x512.png",
+    "src": "mario-icon.png"
       "sizes": "512x512",
       "type": "image/png"
     }],
