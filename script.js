@@ -22,7 +22,7 @@ const KEY_LEFT = 37;
 const KEY_RIGHT = 39;
 const KEY_SPACE = 32;
 
-var spelerX = 200; // x-positie van speler
+var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 var vijandX = 600; // x-positie van vijand
 var vijandY = 500; // y-positie van vijand
@@ -32,7 +32,9 @@ var springSnelheid = 0;
 var springSnelheidStart = 5;
 var zwaartekracht = 0.4 ;
 
+var imgMario; // mario
 var img; //plaatje
+
 
 
 /* ********************************************* */
@@ -45,11 +47,11 @@ var img; //plaatje
 var beweegAlles = function() {
   // speler
   if (keyIsDown(KEY_LEFT)) {
-   spelerX = spelerX -1;
+   spelerX = spelerX -2;
   }
   
   if (keyIsDown(KEY_RIGHT)) {
-    spelerX = spelerX +1;
+    spelerX = spelerX +2;
   }
   
   if(spelerSpringt === false && 
@@ -76,7 +78,13 @@ var beweegAlles = function() {
  */
 var verwerkBotsing = function() {
   // botsing speler tegen vijand
-
+  if (spelerX - vijandX < 50 && 
+      spelerX - vijandX >-50 &&
+      spelerY - vijandY <50 &&
+      spelerY - vijandY > -50) {
+      console.log("Botsing");
+     
+  }  
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -98,8 +106,7 @@ var tekenAlles = function() {
   // kogel
 
   // speler
-  fill("white");
-  rect(spelerX - 25, spelerY - 5, 50, 60);
+  image(imgMario, spelerX - 50, spelerY  + 5, 100, 100);
   fill("black");
   ellipse(spelerX, spelerY + 50, 10, 10);
 
@@ -124,11 +131,15 @@ var checkGameOver = function() {
  * de code in deze functie wordt één keer uitgevoerd door
  * we laden hier de plaatjes
  */
+
+
+
 function preload() {
   img = loadImage('Fireball.png');
+  imgMario = loadImage('Mario.png');
 }
 
-/**
+/** 
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
  * de p5 library, zodra het spel geladen is in de browser
