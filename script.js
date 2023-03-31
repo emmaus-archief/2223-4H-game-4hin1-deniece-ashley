@@ -24,11 +24,15 @@ const KEY_SPACE = 32;
 
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
+
 var vijandX = 600; // x-positie van vijand
 var vijandY = 500; // y-positie van vijand
 
+var blokX = 1190; // x-positie van blok
+var blokY = 670; // y-positie van blok
+
 var spelerSpringt = false;
-var springSnelheid = 0;
+var springSnelheid = 1;
 var springSnelheidStart = 5;
 var zwaartekracht = 0.4 ;
 
@@ -77,14 +81,15 @@ var beweegAlles = function() {
  * Updatet globale variabelen punten en health
  */
 var verwerkBotsing = function() {
-  // botsing speler tegen vijand
-  if (spelerX - vijandX < 50 && 
-      spelerX - vijandX >-50 &&
-      spelerY - vijandY <50 &&
-      spelerY - vijandY > -50) {
+  // botsing speler tegen blok
+  if (spelerX - blokX < 50 && 
+      spelerX - blokX >-50 &&
+      spelerY - blokY <50 &&
+      spelerY - blokY > -50) {
       console.log("Botsing");
      
   }  
+  console.log(spelerY + " - " + blokY);
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -106,9 +111,17 @@ var tekenAlles = function() {
   // kogel
 
   // speler
-  image(imgMario, spelerX - 50, spelerY  + 5, 100, 100);
-  fill("black");
-  ellipse(spelerX, spelerY + 50, 10, 10);
+  image(imgMario, spelerX -50 , spelerY  -100, 100, 100);
+  fill("purple");
+  ellipse(spelerX, spelerY , 10, 10);
+
+  //Blok
+  {
+  fill("rgb(255, 255, 255)");
+  rect(blokX, blokY, 100, 50);
+      fill("purple");
+  ellipse(blokX, blokY , 10, 10);
+  };
 
   // punten en health
 };
