@@ -18,7 +18,7 @@
 const SPELEN = 1;
 const GAMEOVER = 2;
 const UITLEG = 8;
-var spelStatus = SPELEN;
+var spelStatus = UITLEG;
 const KEY_LEFT = 37;
 const KEY_RIGHT = 39;
 const KEY_SPACE = 32;
@@ -191,13 +191,21 @@ function draw() {
     fill("white");
     text("Game over, druk spatie voor start",100, 100);
     if (keyIsDown(32)) { //spatie
-      spelerX = 400;
-    spelStatus = SPELEN;
+    spelStatus = UITLEG;
     }
   }
   if (spelStatus === UITLEG) {
     // teken uitleg scherm
     console.log("uitleg");
-    
+    textSize(50);
+    fill('rgb(135, 206, 235)');
+    rect(0,0,12800,720);
+    fill("white");
+    text("Uitleg: doe je ding, druk op enter",100, 100);
+    if (keyIsDown(13)) { //enter
+      spelerX = 400;
+    spelStatus = SPELEN;  
   }
+}
+  
 }
