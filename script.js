@@ -26,8 +26,8 @@ const KEY_SPACE = 32;
 var spelerX = 600; // x-positie van speler
 var spelerY = 710; // y-positie van speler
 
-var vijandX = 600; // x-positie van vijand
-var vijandY = 500; // y-positie van vijand
+var vijandX = 200; // x-positie van vijand
+var vijandY = 300; // y-positie van vijand
 
 var blokX = 1190; // x-positie van blok
 var blokY = 670; // y-positie van blok
@@ -38,8 +38,7 @@ var springSnelheidStart = 5;
 var zwaartekracht = 0.4 ;
 
 var imgMario; // mario
-var img; //plaatje
-
+var img; //plaatje fireball
 
 
 /* ********************************************* */
@@ -73,7 +72,8 @@ var beweegAlles = function() {
     spelerY = 710;
   }
   // vijand
-
+  vijandY=vijandY+1;
+  vijandX=vijandX+1;
   // kogel
 };
 
@@ -98,17 +98,19 @@ var tekenAlles = function() {
   // achtergrond
   fill("rgb(135, 206, 235)");
   rect(0,0,1280,720);
-  
-  // vijand
- image(img, vijandX - 25 , vijandY - 25, 125, 125);
 
+
+  // vijand
+ image(img, vijandX - 75, vijandY - 60, 125, 125);
+ fill("purple");
+  ellipse(vijandX , vijandY , 10, 10);
 
   // kogel
 
   // speler
   image(imgMario, spelerX -50 , spelerY  -100, 100, 100);
   fill("purple");
-  ellipse(spelerX, spelerY , 10, 10);
+  ellipse(spelerX , spelerY  , 10, 10);
 
   //Blok
   {
@@ -126,13 +128,13 @@ var tekenAlles = function() {
  * anders return false
  */
 var checkGameOver = function() {
-  if (spelerX - blokX < 50 && 
-      spelerX - blokX >-50 &&
-      spelerY - blokY <50 &&
-      spelerY - blokY > -50) {
+  if (spelerX - vijandX < 50 && 
+      spelerX - vijandX >-50 &&
+      spelerY -100 - vijandY <100 &&
+      spelerY -100 - vijandY > -100) {
       console.log("Botsing");
      
-  console.log("spelerY:" + spelerY + " - " + "blokY:"+blokY);
+  console.log("spelerY:" + spelerY + " - " + "vijandY:"+ vijandY);
     return true;
   }
   // check of HP 0 is , of tijd op is, of ...
@@ -201,11 +203,11 @@ function draw() {
     fill('rgb(135, 206, 235)');
     rect(0,0,12800,720);
     fill("white");
-    text("Uitleg: doe je ding, druk op enter",100, 100);
+    text("Druk op enter om te beginnen",100, 100);
     if (keyIsDown(13)) { //enter
       spelerX = 400;
     spelStatus = SPELEN;  
   }
 }
-  
+
 }
