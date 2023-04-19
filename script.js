@@ -41,6 +41,7 @@ var imgMario; // mario
 var img; //plaatje fireball
 
 
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
