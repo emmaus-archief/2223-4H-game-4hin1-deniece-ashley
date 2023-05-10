@@ -34,3 +34,5 @@ https://emmauscollege.github.io/informatica/game/
 [] stap 12: Vijanden en bonus (ster).
 [] stap 13: Geluid, poppetje verbeteren.
 [] stap 14: Xp voor level poppetje. 3 levens, zien hoeveel coins je hebt verzameld. 
+
+test
