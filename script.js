@@ -121,7 +121,7 @@ var tekenAlles = function() {
   rect(obstakelX, obstakelY, 150, 50);
     rect(obstakelX - 100, obstakelY - 100, 150, 50);
     rect(obstakelX - 200, obstakelY - 200, 150, 50);
-    rect(obstakelX + 100, obstakelY)
+    rect(obstakelX + 100, obstakelY + 100, 150, 50);
   };
   
 
