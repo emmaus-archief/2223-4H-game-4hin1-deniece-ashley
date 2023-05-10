@@ -119,7 +119,11 @@ var tekenAlles = function() {
   ellipse(blokX, blokY , 10, 10);
       fill("rgb(203, 203, 203)");
   rect(obstakelX, obstakelY, 150, 50);
+    rect(obstakelX - 100, obstakelY - 100, 150, 50);
+    rect(obstakelX - 200, obstakelY - 200, 150, 50);
+    rect(obstakelX + 100, obstakelY)
   };
+  
 
   // speler
   image(imgMario, spelerX -50 , spelerY  -100, 100, 100);
@@ -136,8 +140,8 @@ var tekenAlles = function() {
 var checkGameOver = function() {
   if (spelerX - vijandX < 50 && 
       spelerX - vijandX >-50 &&
-      spelerY -100 - vijandY <100 &&
-      spelerY -100 - vijandY > -100) {
+      spelerY - vijandY <150 &&
+      spelerY - vijandY > 50) {
       console.log("Botsing");
      
   console.log("spelerY:" + spelerY + " - " + "vijandY:"+ vijandY);
@@ -211,7 +215,9 @@ function draw() {
     fill("white");
     text("Druk op enter om te beginnen",100, 100);
     if (keyIsDown(13)) { //enter
-      spelerX = 400;
+      spelerX = 400;  
+      vijandY = 200;
+      vijandX = 400;
     spelStatus = SPELEN;  
   }
 }
