@@ -24,12 +24,12 @@ const KEY_RIGHT = 39;
 const KEY_SPACE = 32;
 
 var spelerX = 600; // x-positie van speler
-var spelerY = 710; // y-positie van speler
+var spelerY = 700; // y-positie van speler
 
 var vijandX = 200; // x-positie van vijand
 var vijandY = 300; // y-positie van vijand
 
-var blokX = 1190; // x-positie van blok
+var blokX = 0; // x-positie van blok
 var blokY = 670; // y-positie van blok
 
 var spelerSpringt = false;
@@ -40,7 +40,8 @@ var zwaartekracht = 0.4 ;
 var imgMario; // mario
 var img; //plaatje fireball
 
-
+var obstakelX = 900;
+var obstakelY = 400;
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -97,7 +98,7 @@ var verwerkBotsing = function() {
  */
 var tekenAlles = function() {
   // achtergrond
-  fill("rgb(135, 206, 235)");
+  fill("rgb(100, 149, 237)");
   rect(0,0,1280,720);
 
 
@@ -108,19 +109,23 @@ var tekenAlles = function() {
 
   // kogel
 
+  
+
+  //Blok
+  {
+  fill("rgb(34, 139, 34)");
+  rect(blokX, blokY, 1350, 50);
+      fill("purple");
+  ellipse(blokX, blokY , 10, 10);
+      fill("rgb(203, 203, 203)");
+  rect(obstakelX, obstakelY, 150, 50);
+  };
+
   // speler
   image(imgMario, spelerX -50 , spelerY  -100, 100, 100);
   fill("purple");
   ellipse(spelerX , spelerY  , 10, 10);
-
-  //Blok
-  {
-  fill("rgb(255, 255, 255)");
-  rect(blokX, blokY, 100, 50);
-      fill("purple");
-  ellipse(blokX, blokY , 10, 10);
-  };
-
+  
   // punten en health
 };
 
@@ -169,7 +174,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('rgb(135, 206, 235)');
+  background('rgb(100, 149, 237)');
 }
 
 /**
@@ -201,7 +206,7 @@ function draw() {
     // teken uitleg scherm
     console.log("uitleg");
     textSize(50);
-    fill('rgb(135, 206, 235)');
+    fill('rgb(100, 149, 237)');
     rect(0,0,12800,720);
     fill("white");
     text("Druk op enter om te beginnen",100, 100);
