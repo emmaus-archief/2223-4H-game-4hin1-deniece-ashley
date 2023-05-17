@@ -24,7 +24,7 @@ const KEY_RIGHT = 39;
 const KEY_SPACE = 32;
 
 var spelerX = 600; // x-positie van speler
-var spelerY = 700; // y-positie van speler
+var spelerY = 690; // y-positie van speler
 
 var vijandX = 200; // x-positie van vijand
 var vijandY = 300; // y-positie van vijand
@@ -122,6 +122,7 @@ var tekenAlles = function() {
     rect(obstakelX - 100, obstakelY - 100, 150, 50);
     rect(obstakelX - 200, obstakelY - 200, 150, 50);
     rect(obstakelX + 100, obstakelY + 100, 150, 50);
+    rect(obstakelX + 200, obstakelY + 200, 150, 50);
   };
   
 
