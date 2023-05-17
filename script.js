@@ -32,6 +32,9 @@ var vijandY = 300; // y-positie van vijand
 var blokX = 0; // x-positie van blok
 var blokY = 670; // y-positie van blok
 
+var vlagX = 600;
+var vlagY = 130;
+
 var spelerSpringt = false;
 var springSnelheid = 1;
 var springSnelheidStart = 5;
@@ -39,6 +42,7 @@ var zwaartekracht = 0.4 ;
 
 var imgMario; // mario
 var img; //plaatje fireball
+var imgvlag; //plaatje mario vlag
 
 var obstakelX = 900;
 var obstakelY = 400;
@@ -74,8 +78,18 @@ var beweegAlles = function() {
     spelerY = 710;
   }
   // vijand
-  vijandY=vijandY+1;
-  vijandX=vijandX+1;
+  vijandY=vijandY+2;
+  vijandX=vijandX+2;
+
+  if (vijandY > 700) {
+    vijandY=0
+  }
+
+
+  if (vijandX > 900) {
+    vijandX=0
+  }
+  
   // kogel
 };
 
@@ -107,7 +121,8 @@ var tekenAlles = function() {
  fill("purple");
   ellipse(vijandX , vijandY , 10, 10);
 
-  // kogel
+  // vlag
+  image(imgvlag, vlagX, vlagY, 50, 90);
 
   
 
@@ -167,6 +182,7 @@ var checkGameOver = function() {
 function preload() {
   img = loadImage('Fireball.png');
   imgMario = loadImage('Mario.png');
+  imgvlag = loadImage('vlag.jpg');
 }
 
 /** 
