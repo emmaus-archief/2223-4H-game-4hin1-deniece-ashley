@@ -23,7 +23,7 @@ https://emmauscollege.github.io/informatica/game/
 [X] stap 1: Maak een rechthoekig blokje.
 [X] stap 2: Zorg dat blokje rechtdoor en achteruit kan. 
 [X] stap 3: Zorg blokje kan links en rechts.
-[] stap 4: Omgeving veranderen.
+[X] stap 4: Omgeving veranderen.
 [] stap 5: Objecten plaatsen (coins). 
 [] stap 6: Coins oppakken. 
 [X] stap 7: Springen.
@@ -38,8 +38,8 @@ https://emmauscollege.github.io/informatica/game/
 test
 
 aanpassing op planning:
-[] game over als bosrting met vlag
-[] bariabel tijd maken begin op waarde 500
+[X] game over als bosrting met vlag
+[] variabel tijd maken begin op waarde 500
 [] zet tijd op beel met fill, textSize en text, meer info in p5js refernce
 [] elke keer als draw uitgevoerd wordt, 1 van tijd afhalen (dus 50x per sec)
 [] als tijd === 0, game over

@@ -33,10 +33,13 @@ var blokX = 0; // x-positie van blok
 var blokY = 670; // y-positie van blok
 
 var vlagX = 900; // x-positie van vlag
-var vlagY = 600; // y-positie van vlag
+var vlagY = 700; // y-positie van vlag
 
 var obstakelX = 900; // x-positie van obstakel
 var obstakelY = 400; // y-positie van obstakel
+
+var zonX = 100;
+var zonY = 100;
 
 var spelerSpringt = false;
 var springSnelheid = 1;
@@ -46,6 +49,8 @@ var zwaartekracht = 0.4 ;
 var imgMario; // mario
 var img; //plaatje fireball
 var imgvlag; //plaatje mario vlag
+
+var tijd = 0; //tijd
 
 
 
@@ -127,6 +132,10 @@ var tekenAlles = function() {
   image(imgvlag, vlagX, vlagY, 50, 90);
   fill("white")
   ellipse(vlagX, vlagY, 10, 10);
+
+  // zon
+  fill("rgb(255,234,0)");
+  ellipse(zonX,zonY,175,175);
 
   
 
