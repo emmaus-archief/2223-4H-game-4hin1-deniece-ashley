@@ -36,3 +36,13 @@ https://emmauscollege.github.io/informatica/game/
 [] stap 14: Xp voor level poppetje. 3 levens, zien hoeveel coins je hebt verzameld. 
 
 test
+
+aanpassing op planning:
+[] game over als bosrting met vlag
+[] bariabel tijd maken begin op waarde 500
+[] zet tijd op beel met fill, textSize en text, meer info in p5js refernce
+[] elke keer als draw uitgevoerd wordt, 1 van tijd afhalen (dus 50x per sec)
+[] als tijd === 0, game over
+[]als gebotst tegen b bal, game ovber & tijd nul mkane
+[]als gebotst tegen vlag, ganme over , tijd blijft tijd
+[]in het gameoverscherm resterende tijd neerzetten als behaalde punten

@@ -24,7 +24,7 @@ const KEY_RIGHT = 39;
 const KEY_SPACE = 32;
 
 var spelerX = 600; // x-positie van speler
-var spelerY = 690; // y-positie van speler
+var spelerY = 670; // y-positie van speler
 
 var vijandX = 200; // x-positie van vijand
 var vijandY = 300; // y-positie van vijand
@@ -32,8 +32,11 @@ var vijandY = 300; // y-positie van vijand
 var blokX = 0; // x-positie van blok
 var blokY = 670; // y-positie van blok
 
-var vlagX = 600;
-var vlagY = 130;
+var vlagX = 900; // x-positie van vlag
+var vlagY = 600; // y-positie van vlag
+
+var obstakelX = 900; // x-positie van obstakel
+var obstakelY = 400; // y-positie van obstakel
 
 var spelerSpringt = false;
 var springSnelheid = 1;
@@ -44,8 +47,7 @@ var imgMario; // mario
 var img; //plaatje fireball
 var imgvlag; //plaatje mario vlag
 
-var obstakelX = 900;
-var obstakelY = 400;
+
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -123,17 +125,16 @@ var tekenAlles = function() {
 
   // vlag
   image(imgvlag, vlagX, vlagY, 50, 90);
+  fill("white")
+  ellipse(vlagX, vlagY, 10, 10);
 
   
 
   //Blok
   {
-  fill("rgb(34, 139, 34)");
+  fill("rgb(34, 139, 34)"); //gras
   rect(blokX, blokY, 1350, 50);
-      fill("purple");
-  ellipse(blokX, blokY , 10, 10);
-      fill("rgb(203, 203, 203)");
-  rect(obstakelX, obstakelY, 150, 50);
+   rect(obstakelX, obstakelY, 150, 50);
     rect(obstakelX - 100, obstakelY - 100, 150, 50);
     rect(obstakelX - 200, obstakelY - 200, 150, 50);
     rect(obstakelX + 100, obstakelY + 100, 150, 50);
@@ -167,6 +168,19 @@ var checkGameOver = function() {
   return false;
 };
 
+var checkGameOver = function() {
+  if (spelerX - vlagX < 50 && 
+      spelerX - vlagX >-50 &&
+      spelerY - vlagY <150 &&
+      spelerY - vlagY > 50) {
+      console.log("Botsing");
+     
+  console.log("spelerY:" + spelerY + " - " + "vlagY:"+ vlagY);
+    return true;
+  }
+  // check of HP 0 is , of tijd op is, of ...
+  return false;
+};
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
@@ -180,9 +194,9 @@ var checkGameOver = function() {
 
 
 function preload() {
-  img = loadImage('Fireball.png');
-  imgMario = loadImage('Mario.png');
-  imgvlag = loadImage('vlag.jpg');
+  img = loadImage('Fireball.png'); // vuurbal
+  imgMario = loadImage('Mario.png'); //mario
+  imgvlag = loadImage('vlag.png'); //vlag
 }
 
 /** 
