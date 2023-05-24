@@ -164,11 +164,7 @@ var checkGameOver = function() {
   console.log("spelerY:" + spelerY + " - " + "vijandY:"+ vijandY);
     return true;
   }
-  // check of HP 0 is , of tijd op is, of ...
-  return false;
-};
 
-var checkGameOver = function() {
   if (spelerX - vlagX < 50 && 
       spelerX - vlagX >-50 &&
       spelerY - vlagY <150 &&
@@ -178,9 +174,13 @@ var checkGameOver = function() {
   console.log("spelerY:" + spelerY + " - " + "vlagY:"+ vlagY);
     return true;
   }
+
+  
   // check of HP 0 is , of tijd op is, of ...
   return false;
 };
+
+
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
@@ -232,7 +232,11 @@ function draw() {
     console.log("game over");
     textSize(50);
     fill("white");
-    text("Game over, druk spatie voor start",100, 100);
+    if (tijd <= 0) {
+      text("Game over, druk spatie voor start",100, 100);
+    } else {
+      text("Je hebt gewonnen! Punten!!!",100, 100);
+    }
     if (keyIsDown(32)) { //spatie
     spelStatus = UITLEG;
     }
