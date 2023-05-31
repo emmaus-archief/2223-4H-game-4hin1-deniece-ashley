@@ -50,7 +50,9 @@ var imgMario; // mario
 var img; //plaatje fireball
 var imgvlag; //plaatje mario vlag
 
-var tijd = 0; //tijd
+var tijd = 180; //tijd
+var tijdX = 900;
+var tijdY = 100;
 
 
 
@@ -96,6 +98,8 @@ var beweegAlles = function() {
   if (vijandX > 900) {
     vijandX=0
   }
+  //tijd
+  tijd = tijd - 0.02;
   
   // kogel
 };
@@ -137,7 +141,10 @@ var tekenAlles = function() {
   fill("rgb(255,234,0)");
   ellipse(zonX,zonY,175,175);
 
-  
+  //tijd
+  fill('cyan');
+  textSize(100);
+  text(floor(tijd),tijdX + 100, tijdY - 50, 100, 100);
 
   //Blok
   {
