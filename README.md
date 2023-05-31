@@ -24,25 +24,14 @@ https://emmauscollege.github.io/informatica/game/
 [X] stap 2: Zorg dat blokje rechtdoor en achteruit kan. 
 [X] stap 3: Zorg blokje kan links en rechts.
 [X] stap 4: Omgeving veranderen.
-[] stap 5: Objecten plaatsen (coins). 
-[] stap 6: Coins oppakken. 
-[X] stap 7: Springen.
-[] stap 8: Tijd anders dood.
-[] stap 9: Einde.
-[] stap 10: Level up.
-[] stap 11: Menu.
-[] stap 12: Vijanden en bonus (ster).
-[] stap 13: Geluid, poppetje verbeteren.
-[] stap 14: Xp voor level poppetje. 3 levens, zien hoeveel coins je hebt verzameld. 
-
-test
-
-aanpassing op planning:
-[X] game over als bosrting met vlag
-[] variabel tijd maken begin op waarde 500
-[] zet tijd op beel met fill, textSize en text, meer info in p5js refernce
-[] elke keer als draw uitgevoerd wordt, 1 van tijd afhalen (dus 50x per sec)
-[] als tijd === 0, game over
-[]als gebotst tegen b bal, game ovber & tijd nul mkane
-[]als gebotst tegen vlag, ganme over , tijd blijft tijd
-[]in het gameoverscherm resterende tijd neerzetten als behaalde punten
+[X] stap 5: Springen.
+[X] stap 6: Tijd anders dood.
+[] stap 7: Einde.
+[] stap 8: game over als botsing met vlag
+[X] stap 9: variabel tijd maken begin op waarde 500
+[X] stap 10:zet tijd op beel met fill, textSize en text, meer info in p5js refernce
+[X] stap 11: elke keer als draw uitgevoerd wordt, 1 van tijd afhalen (dus 50x per sec)
+[] stap 12: als tijd === 0, game over
+[] stap 13: als gebotst tegen bal, game ovber & tijd nul maken
+[] stap 14: als gebotst tegen vlag, ganme over , tijd blijft tijd
+[] stap 15: in het gameoverscherm resterende tijd neerzetten als behaalde punten

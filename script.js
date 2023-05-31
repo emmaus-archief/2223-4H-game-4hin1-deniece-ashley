@@ -17,6 +17,8 @@
 /* ********************************************* */
 const SPELEN = 1;
 const GAMEOVER = 2;
+const GEWONNEN = 3;
+const VERLOREN = 4;
 const UITLEG = 8;
 var spelStatus = UITLEG;
 const KEY_LEFT = 37;
@@ -44,7 +46,7 @@ var zonY = 100;
 var spelerSpringt = false;
 var springSnelheid = 1;
 var springSnelheidStart = 5;
-var zwaartekracht = 0.4 ;
+var zwaartekracht = 0.4;
 
 var imgMario; // mario
 var img; //plaatje fireball
@@ -65,42 +67,42 @@ var tijdY = 100;
  */
 var beweegAlles = function() {
   // speler
-  if (keyIsDown(KEY_LEFT)) {              
-   spelerX = spelerX -2;
+  if (keyIsDown(KEY_LEFT)) {
+    spelerX = spelerX - 2;
   }
-  
+
   if (keyIsDown(KEY_RIGHT)) {
-    spelerX = spelerX +2;
+    spelerX = spelerX + 2;
   }
-  
-  if(spelerSpringt === false && 
-     keyIsDown(KEY_SPACE)) { //start sprong
+
+  if (spelerSpringt === false &&
+    keyIsDown(KEY_SPACE)) { //start sprong
     spelerSpringt = true;
     springSnelheid = springSnelheidStart;
   }
   if (spelerSpringt === true) { //sprong bezig
-   spelerY = spelerY - springSnelheid;
-   springSnelheid = springSnelheid - 0.2;
+    spelerY = spelerY - springSnelheid;
+    springSnelheid = springSnelheid - 0.2;
   }
   if (spelerY > 710) { //sprong klaar
     spelerSpringt = false;
     spelerY = 710;
   }
   // vijand
-  vijandY=vijandY+2;
-  vijandX=vijandX+2;
+  vijandY = vijandY + 2;
+  vijandX = vijandX + 2;
 
   if (vijandY > 700) {
-    vijandY=0
+    vijandY = 0
   }
 
 
   if (vijandX > 900) {
-    vijandX=0
+    vijandX = 0
   }
   //tijd
   tijd = tijd - 0.02;
-  
+
   // kogel
 };
 
@@ -111,7 +113,7 @@ var beweegAlles = function() {
  */
 var verwerkBotsing = function() {
   // botsing speler tegen blok
-  
+
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -124,13 +126,13 @@ var verwerkBotsing = function() {
 var tekenAlles = function() {
   // achtergrond
   fill("rgb(100, 149, 237)");
-  rect(0,0,1280,720);
+  rect(0, 0, 1280, 720);
 
 
   // vijand
- image(img, vijandX - 75, vijandY - 60, 125, 125);
- fill("purple");
-  ellipse(vijandX , vijandY , 10, 10);
+  image(img, vijandX - 75, vijandY - 60, 125, 125);
+  fill("purple");
+  ellipse(vijandX, vijandY, 10, 10);
 
   // vlag
   image(imgvlag, vlagX, vlagY, 50, 90);
@@ -139,30 +141,30 @@ var tekenAlles = function() {
 
   // zon
   fill("rgb(255,234,0)");
-  ellipse(zonX,zonY,175,175);
+  ellipse(zonX, zonY, 175, 175);
 
   //tijd
   fill('cyan');
   textSize(100);
-  text(floor(tijd),tijdX + 100, tijdY - 50, 100, 100);
+  text(floor(tijd), tijdX + 100, tijdY - 50, 100, 100);
 
   //Blok
   {
-  fill("rgb(34, 139, 34)"); //gras
-  rect(blokX, blokY, 1350, 50);
-   rect(obstakelX, obstakelY, 150, 50);
+    fill("rgb(34, 139, 34)"); //gras
+    rect(blokX, blokY, 1350, 50);
+    rect(obstakelX, obstakelY, 150, 50);
     rect(obstakelX - 100, obstakelY - 100, 150, 50);
     rect(obstakelX - 200, obstakelY - 200, 150, 50);
     rect(obstakelX + 100, obstakelY + 100, 150, 50);
     rect(obstakelX + 200, obstakelY + 210, 150, 50);
   };
-  
+
 
   // speler
-  image(imgMario, spelerX -50 , spelerY  -100, 100, 100);
+  image(imgMario, spelerX - 50, spelerY - 100, 100, 100);
   fill("purple");
-  ellipse(spelerX , spelerY  , 10, 10);
-  
+  ellipse(spelerX, spelerY, 10, 10);
+
   // punten en health
 };
 
@@ -170,28 +172,31 @@ var tekenAlles = function() {
  * return true als het gameover is
  * anders return false
  */
-var checkGameOver = function() {
-  if (spelerX - vijandX < 50 && 
-      spelerX - vijandX >-50 &&
-      spelerY - vijandY <150 &&
-      spelerY - vijandY > 50) {
-      console.log("Botsing");
-     
-  console.log("spelerY:" + spelerY + " - " + "vijandY:"+ vijandY);
+var checkVerloren = function() {
+  if (spelerX - vijandX < 50 &&
+    spelerX - vijandX > -50 &&
+    spelerY - vijandY < 150 &&
+    spelerY - vijandY > 50) {
+    console.log("Botsing");
+
+    console.log("spelerY:" + spelerY + " - " + "vijandY:" + vijandY);
+    return false;
+  }
+
+
+
+var checkGewonnen = function() {
+  if (spelerX - vlagX < 50 &&
+    spelerX - vlagX > -50 &&
+    spelerY - vlagY < 150 &&
+    spelerY - vlagY > 50) {
+    console.log("Botsing");
+
+    console.log("spelerY:" + spelerY + " - " + "vlagY:" + vlagY);
     return true;
   }
 
-  if (spelerX - vlagX < 50 && 
-      spelerX - vlagX >-50 &&
-      spelerY - vlagY <150 &&
-      spelerY - vlagY > 50) {
-      console.log("Botsing");
-     
-  console.log("spelerY:" + spelerY + " - " + "vlagY:"+ vlagY);
-    return true;
-  }
 
-  
   // check of HP 0 is , of tijd op is, of ...
   return false;
 };
@@ -238,23 +243,34 @@ function draw() {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
-    if (checkGameOver()) {
-      spelStatus = GAMEOVER;
+    if (checkGewonnen()) {
+      spelStatus = GEWONNEN;
+    }
+    if (checkVerloren()) {
+      spelStatus = VERLOREN;
     }
     console.log("spelen");
   }
-  if (spelStatus === GAMEOVER) {
+  if (spelStatus === GEWONNEN){
     // teken game-over scherm
-    console.log("game over");
+    console.log("gewonnen");
     textSize(50);
     fill("white");
-    if (tijd <= 0) {
-      text("Game over, druk spatie voor start",100, 100);
-    } else {
-      text("Je hebt gewonnen! Punten!!!",100, 100);
+    if (tijd > 0) {
+      text("Je hebt gewonnen! Punten!!!", 100, 100);
     }
     if (keyIsDown(32)) { //spatie
-    spelStatus = UITLEG;
+      spelStatus = UITLEG;
+    }
+  }
+  if (spelStatus === VERLOREN) {
+    // teken game-over scherm
+    console.log("verloren");
+    textSize(50);
+    fill("white");
+    text("Game over, druk spatie voor start", 100, 100);
+    if (keyIsDown(32)) { //spatie
+      spelStatus = UITLEG;
     }
   }
   if (spelStatus === UITLEG) {
@@ -262,15 +278,15 @@ function draw() {
     console.log("uitleg");
     textSize(50);
     fill('rgb(100, 149, 237)');
-    rect(0,0,12800,720);
+    rect(0, 0, 12800, 720);
     fill("white");
-    text("Druk op enter om te beginnen",100, 100);
+    text("Druk op enter om te beginnen", 100, 100);
     if (keyIsDown(13)) { //enter
-      spelerX = 400;  
+      spelerX = 400;
       vijandY = 200;
       vijandX = 400;
-    spelStatus = SPELEN;  
+      spelStatus = SPELEN;
+    }
   }
-}
 
 }
