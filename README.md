@@ -26,12 +26,11 @@ https://emmauscollege.github.io/informatica/game/
 [X] stap 4: Omgeving veranderen.
 [X] stap 5: Springen.
 [X] stap 6: Tijd anders dood.
-[] stap 7: Einde.
-[] stap 8: game over als botsing met vlag
+[X] stap 7: Einde.
+[X] stap 8: gewonnen als botsing met vlag
 [X] stap 9: variabel tijd maken begin op waarde 500
 [X] stap 10:zet tijd op beel met fill, textSize en text, meer info in p5js refernce
 [X] stap 11: elke keer als draw uitgevoerd wordt, 1 van tijd afhalen (dus 50x per sec)
-[] stap 12: als tijd === 0, game over
-[] stap 13: als gebotst tegen bal, game over & tijd nul maken
-[] stap 14: als gebotst tegen vlag, ganme over , tijd blijft tijd
-[] stap 15: in het gameoverscherm resterende tijd neerzetten als behaalde punten
+[X] stap 12: als tijd === 0, game over
+[X] stap 13: als gebotst tegen vuurbal, game over & tijd nul maken
+[X] stap 14: als gebotst tegen vlag, ganme over , tijd blijft tijd

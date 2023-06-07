@@ -34,8 +34,8 @@ var vijandY = 300; // y-positie van vijand
 var blokX = 0; // x-positie van blok
 var blokY = 670; // y-positie van blok
 
-var vlagX = 600; // x-positie van vlag
-var vlagY = 500; // y-positie van vlag
+var vlagX = 1150; // x-positie van vlag
+var vlagY = 550; // y-positie van vlag
 
 var obstakelX = 900; // x-positie van obstakel
 var obstakelY = 400; // y-positie van obstakel
