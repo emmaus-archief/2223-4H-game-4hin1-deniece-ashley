@@ -32,6 +32,6 @@ https://emmauscollege.github.io/informatica/game/
 [X] stap 10:zet tijd op beel met fill, textSize en text, meer info in p5js refernce
 [X] stap 11: elke keer als draw uitgevoerd wordt, 1 van tijd afhalen (dus 50x per sec)
 [] stap 12: als tijd === 0, game over
-[] stap 13: als gebotst tegen bal, game ovber & tijd nul maken
+[] stap 13: als gebotst tegen bal, game over & tijd nul maken
 [] stap 14: als gebotst tegen vlag, ganme over , tijd blijft tijd
 [] stap 15: in het gameoverscherm resterende tijd neerzetten als behaalde punten

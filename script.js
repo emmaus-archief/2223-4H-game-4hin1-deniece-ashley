@@ -51,6 +51,7 @@ var zwaartekracht = 0.4;
 var imgMario; // mario
 var img; //plaatje fireball
 var imgvlag; //plaatje mario vlag
+var imgBack; // plaatje achtergrond
 
 var tijd = 180; //tijd
 var tijdX = 900;
@@ -102,6 +103,9 @@ var beweegAlles = function() {
   }
   //tijd
   tijd = tijd - 0.02;
+  if(tijd <= 0){
+    spelStatus = VERLOREN
+  }
 
   // kogel
 };
@@ -125,14 +129,14 @@ var verwerkBotsing = function() {
  */
 var tekenAlles = function() {
   // achtergrond
-  fill("rgb(100, 149, 237)");
-  rect(0, 0, 1280, 720);
+  background(imgBack);
+  
 
 
   // vijand
   image(img, vijandX - 75, vijandY - 60, 125, 125);
   fill("purple");
-  ellipse(vijandX, vijandY, 10, 10);
+ 
 
   // vlag
   image(imgvlag, vlagX, vlagY, 50, 90);
@@ -151,19 +155,17 @@ var tekenAlles = function() {
   //Blok
   {
     fill("rgb(34, 139, 34)"); //gras
-    rect(blokX, blokY, 1350, 50);
     rect(obstakelX, obstakelY, 150, 50);
     rect(obstakelX - 100, obstakelY - 100, 150, 50);
     rect(obstakelX - 200, obstakelY - 200, 150, 50);
     rect(obstakelX + 100, obstakelY + 100, 150, 50);
-    rect(obstakelX + 200, obstakelY + 210, 150, 50);
   };
 
 
   // speler
-  image(imgMario, spelerX - 50, spelerY - 100, 100, 100);
+  image(imgMario, spelerX - 50, spelerY - 150, 100, 100);
   fill("purple");
-  ellipse(spelerX, spelerY, 10, 10);
+
 
   // punten en health
 };
@@ -180,10 +182,10 @@ var checkVerloren = function() {
     console.log("Botsing");
 
     console.log("spelerY:" + spelerY + " - " + "vijandY:" + vijandY);
-    return false;
+    return true;
   }
-
-
+  return false;
+}
 
 var checkGewonnen = function() {
   if (spelerX - vlagX < 50 &&
@@ -218,6 +220,7 @@ function preload() {
   img = loadImage('Fireball.png'); // vuurbal
   imgMario = loadImage('Mario.png'); //mario
   imgvlag = loadImage('vlag.png'); //vlag
+  imgBack = loadImage('achtergrond.jpg');//achtergrond
 }
 
 /** 
@@ -230,7 +233,8 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('rgb(100, 149, 237)');
+ background(imgBack);
+  
 }
 
 /**
@@ -265,6 +269,7 @@ function draw() {
   }
   if (spelStatus === VERLOREN) {
     // teken game-over scherm
+    
     console.log("verloren");
     textSize(50);
     fill("white");
@@ -285,6 +290,7 @@ function draw() {
       spelerX = 400;
       vijandY = 200;
       vijandX = 400;
+      tijd = 180;
       spelStatus = SPELEN;
     }
   }
