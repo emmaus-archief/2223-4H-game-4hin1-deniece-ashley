@@ -34,8 +34,8 @@ var vijandY = 300; // y-positie van vijand
 var blokX = 0; // x-positie van blok
 var blokY = 670; // y-positie van blok
 
-var vlagX = 900; // x-positie van vlag
-var vlagY = 700; // y-positie van vlag
+var vlagX = 600; // x-positie van vlag
+var vlagY = 500; // y-positie van vlag
 
 var obstakelX = 900; // x-positie van obstakel
 var obstakelY = 400; // y-positie van obstakel
@@ -131,17 +131,15 @@ var tekenAlles = function() {
   // achtergrond
   background(imgBack);
   
-
-
   // vijand
   image(img, vijandX - 75, vijandY - 60, 125, 125);
   fill("purple");
  
 
   // vlag
-  image(imgvlag, vlagX, vlagY, 50, 90);
+  image(imgvlag, vlagX, vlagY , 50, 90);
   fill("white")
-  ellipse(vlagX, vlagY, 10, 10);
+  
 
   // zon
   fill("rgb(255,234,0)");
